@@ -1,0 +1,14 @@
+#!/bin/sh 
+
+# Might update this later to env
+
+
+# TODOs 
+# use find to get all files that have changed since a specific time
+# write those files to a standard location/configurable location in a structured way
+# eliminate files that we don't care about (this goes second)
+# find ~ -type f -mtime 0
+# mtime 0 means last 24 hours 1 means 24-48 hours 
+
+find ~ -mtime 0 2>/dev/null | grep -E -v 'container|cache'
+
