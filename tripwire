@@ -13,7 +13,7 @@
 # mtime 0 means last 24 hours 1 means 24-48 hours 
 
 rootdir='/'
-exclude='container|cache'
+exclude='container|cache|.git/objects' # Adding .git objects these look to change very frequently with trees and commits
 include='^/(home|etc|dev)'
 
 find "$rootdir" -mtime 0 -type f 2>/dev/null | grep -E "$include" | grep -E -v "$exclude"
